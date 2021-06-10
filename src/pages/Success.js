@@ -2,7 +2,6 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { Button } from "components";
 import { ReactComponent as SuccesIcon } from "assets/icons/success-icon.svg";
-import styles from "styles/Success.module.css";
 
 const Success = () => {
   const history = useHistory();
