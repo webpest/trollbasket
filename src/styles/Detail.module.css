@@ -1,0 +1,9 @@
+.product__image {
+  padding: 1.6rem 0;
+}
+
+.product__image img {
+  height: 206px;
+  width: 312px;
+  margin: 0 auto;
+}

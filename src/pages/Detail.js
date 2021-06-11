@@ -8,6 +8,7 @@ import {
   selectCartQty,
 } from "slices/product";
 import { Header, Image, DetailBottomNav } from "components";
+import styles from "styles/Detail.module.css";
 
 const Detail = () => {
   const { id } = useParams();
@@ -26,7 +27,11 @@ const Detail = () => {
   return (
     <div className="page">
       <Header title="Details" cartQty={cartQty} />
-      <Image src={productDetail.image} />
+      <section className={styles.product__image}>
+        <div className="container">
+          <Image src={productDetail.image} />
+        </div>
+      </section>
       <h1>{productDetail.name}</h1>
 
       <DetailBottomNav addToCart={handleAddToCart} />
