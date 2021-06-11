@@ -1,0 +1,33 @@
+.success {
+  background: #227eff;
+  background-image: url("/src/assets/images/success-bg.png");
+  background-size: cover;
+  color: var(--color-white);
+}
+
+.success > div {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.success button {
+  position: absolute;
+  bottom: 4rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 18rem;
+}
+
+.content h3 {
+  margin-top: 2.4rem;
+  margin-bottom: 0.8rem;
+  font-size: 2.4rem;
+}
