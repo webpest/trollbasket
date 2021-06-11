@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ErrorFallback = ({ error, resetErrorBoundary }) => {
+const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (
     <div role="alert">
       <p>Something went wrong:</p>
@@ -9,3 +9,5 @@ export const ErrorFallback = ({ error, resetErrorBoundary }) => {
     </div>
   );
 };
+
+export default ErrorFallback;

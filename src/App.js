@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
-import { ErrorFallback } from "components/ErrorFallback";
+import { ErrorFallback } from "components";
 
 const Buy = lazy(() => import("pages/Buy"));
 const Detail = lazy(() => import("pages/Detail"));

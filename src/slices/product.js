@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addItemToCart } from "utils/cart";
+import {
+  addItemToCart,
+  removeItemFromCart,
+  increaseItemInCart,
+  decreaseItemInCart,
+} from "utils/cart";
 
 export const initialState = {
   loading: false,
@@ -26,6 +31,15 @@ const productSlice = createSlice({
     setAddToCart: (state, { payload }) => {
       state.carts = addItemToCart(state.carts, payload);
     },
+    setRemoveItemFromCart: (state, { payload }) => {
+      state.carts = removeItemFromCart(state.carts, payload);
+    },
+    setIncreaseItemt: (state, { payload }) => {
+      state.carts = increaseItemInCart(state.carts, payload);
+    },
+    setDecreaseItem: (state, { payload }) => {
+      state.carts = decreaseItemInCart(state.carts, payload);
+    },
   },
 });
 
@@ -34,6 +48,9 @@ export const {
   setFilteredProducts,
   setSelectedProduct,
   setAddToCart,
+  setRemoveItemFromCart,
+  setIncreaseItemt,
+  setDecreaseItem,
 } = productSlice.actions;
 
 export default productSlice.reducer;
@@ -41,6 +58,7 @@ export default productSlice.reducer;
 export const selectProducts = (state) => state.product;
 export const selectCarts = (state) => state.product.carts;
 export const selectProductDetail = (state) => state.product.selectedProduct;
+export const selectCartQty = (state) => state.product.carts.length;
 
 export const fetchProducts = () => (dispatch) => {
   const { products } = require("../mock/products");
@@ -72,10 +90,18 @@ export const searchByLocation = (location) => (dispatch, getState) => {
   dispatch(setFilteredProducts(result));
 };
 
-export const addToCart = (product) => (dispatch) => {
-  dispatch(setAddToCart(product));
+export const addToCart = (item) => (dispatch) => {
+  dispatch(setAddToCart(item));
 };
 
-export const removeFromCart = (product) => (dispatch) => {
-  console.log(product);
+export const removeFromCart = (item) => (dispatch) => {
+  dispatch(setRemoveItemFromCart(item));
+};
+
+export const increaseQty = (item) => (dispatch) => {
+  dispatch(setIncreaseItemt(item));
+};
+
+export const decreaseQty = (item) => (dispatch) => {
+  dispatch(setDecreaseItem(item));
 };

@@ -1,0 +1,33 @@
+.cartitem {
+  background-color: var(--color-white);
+  padding: 0.8rem 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.cartitem:last-child {
+  margin-bottom: 0;
+}
+
+.cartitem header {
+  display: flex;
+  border-bottom: 1px solid #f6f2f2;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.cartitem header img {
+  width: 48px;
+  margin-right: 1.6rem;
+}
+
+.cartitem footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartitem footer > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

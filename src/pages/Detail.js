@@ -1,13 +1,19 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProduct, selectProductDetail, addToCart } from "slices/product";
-import { Button } from "components";
+import {
+  fetchProduct,
+  selectProductDetail,
+  addToCart,
+  selectCartQty,
+} from "slices/product";
+import { Header, Image, DetailBottomNav } from "components";
 
 const Detail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const productDetail = useSelector(selectProductDetail);
+  const cartQty = useSelector(selectCartQty);
 
   useEffect(() => {
     dispatch(fetchProduct(id));
@@ -19,9 +25,11 @@ const Detail = () => {
 
   return (
     <div className="page">
+      <Header title="Details" cartQty={cartQty} />
+      <Image src={productDetail.image} />
       <h1>{productDetail.name}</h1>
-      <p>{id}</p>
-      <Button onClick={handleAddToCart}>Add to Cart</Button>
+
+      <DetailBottomNav addToCart={handleAddToCart} />
     </div>
   );
 };

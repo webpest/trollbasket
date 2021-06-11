@@ -22,6 +22,15 @@
   font-weight: 400;
 }
 
+.searchbar button {
+  height: 100%;
+  border: 1px solid transparent;
+  background-color: transparent;
+  outline: 1px solid transparent;
+  margin-right: -1rem;
+  cursor: pointer;
+}
+
 .searchbar input::placeholder {
   color: #6f798b;
 }

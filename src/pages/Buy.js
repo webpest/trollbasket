@@ -1,13 +1,21 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts, selectProducts, searchByName } from "slices/product";
+import cn from "classnames";
 import {
-  Button,
+  fetchProducts,
+  selectProducts,
+  searchByName,
+  selectCartQty,
+} from "slices/product";
+import {
   BottomNav,
   ProductGrid,
   SearchBar,
   ProductMenu,
+  HomeHeader,
 } from "components";
+
+import styles from "styles/Buy.module.css";
 
 const Buy = () => {
   const { filteredProduct } = useSelector(selectProducts);
@@ -20,8 +28,12 @@ const Buy = () => {
     dispatch(searchByName(query));
   };
 
+  const pageStyle = cn("page", { [styles.home]: true });
+  const cartQty = useSelector(selectCartQty);
+
   return (
-    <div className="page">
+    <div className={pageStyle}>
+      <HomeHeader cartQty={cartQty} />
       <main className="main">
         <div className="container">
           <SearchBar
@@ -30,7 +42,6 @@ const Buy = () => {
           />
           <ProductMenu />
           <ProductGrid products={filteredProduct} />
-          <Button block>Buy</Button>
         </div>
       </main>
       <BottomNav />

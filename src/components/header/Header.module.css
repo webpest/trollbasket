@@ -1,0 +1,78 @@
+.header,
+.header__home {
+  background-color: var(--color-white);
+}
+
+.header__home {
+  margin-bottom: 1.4rem;
+}
+
+.header__home h1 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  margin: 1rem 0;
+}
+.subheader__wrapper {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 1rem 0;
+}
+.subheader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.6rem 0;
+  align-items: center;
+}
+
+.header__actions button {
+  background-color: #edf2f7;
+  border: 1px solid transparent;
+  font-weight: 700;
+  display: flex;
+  height: 24px;
+  width: 24px;
+  border-radius: var(--border-radius);
+  justify-content: center;
+  align-items: center;
+  color: #0b0c0e;
+  cursor: pointer;
+}
+
+.header__actions h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.right__actions {
+  display: flex;
+}
+
+.right__actions > button {
+  margin-left: 1.6rem;
+  border-radius: 12px;
+}
+
+.cartBtn {
+  position: relative;
+}
+
+.cartBtn > span {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background-color: #ee6f44;
+  top: -6px;
+  right: -6px;
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+}
