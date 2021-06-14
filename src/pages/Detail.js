@@ -13,6 +13,7 @@ import { addToCart, selectTotalItem } from "slices/cart";
 import { Header, Image, DetailBottomNav } from "components";
 import { formatPrice } from "utils/price-format";
 import styles from "styles/Detail.module.css";
+import avatar from "assets/images/avatar.png";
 
 const Detail = () => {
   const { id } = useParams();
@@ -72,7 +73,9 @@ const Detail = () => {
               This is the best product I have used in a long while and the size
               fits perfectly and I love the colors!!!!!
             </li>
-            <li>Segun Arinze</li>
+            <li className={styles.avatar__row}>
+              <img src={avatar} alt="Segun Arinze" /> Segun Arinze
+            </li>
           </ul>
         </div>
       </section>
