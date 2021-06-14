@@ -1,18 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
-import {
-  addItemToCart,
-  removeItemFromCart,
-  increaseItemInCart,
-  decreaseItemInCart,
-} from "utils/cart";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
 
 export const initialState = {
-  loading: false,
-  hasErrors: false,
   products: [],
   filteredProduct: [],
   selectedProduct: {},
-  carts: [],
 };
 
 const productSlice = createSlice({
@@ -28,37 +19,25 @@ const productSlice = createSlice({
     setFilteredProducts: (state, { payload }) => {
       state.filteredProduct = payload;
     },
-    setAddToCart: (state, { payload }) => {
-      state.carts = addItemToCart(state.carts, payload);
-    },
-    setRemoveItemFromCart: (state, { payload }) => {
-      state.carts = removeItemFromCart(state.carts, payload);
-    },
-    setIncreaseItemt: (state, { payload }) => {
-      state.carts = increaseItemInCart(state.carts, payload);
-    },
-    setDecreaseItem: (state, { payload }) => {
-      state.carts = decreaseItemInCart(state.carts, payload);
-    },
   },
 });
 
-export const {
-  setProducts,
-  setFilteredProducts,
-  setSelectedProduct,
-  setAddToCart,
-  setRemoveItemFromCart,
-  setIncreaseItemt,
-  setDecreaseItem,
-} = productSlice.actions;
+export const { setProducts, setFilteredProducts, setSelectedProduct } =
+  productSlice.actions;
 
 export default productSlice.reducer;
 
 export const selectProducts = (state) => state.product;
-export const selectCarts = (state) => state.product.carts;
 export const selectProductDetail = (state) => state.product.selectedProduct;
-export const selectCartQty = (state) => state.product.carts.length;
+
+export const selectLocations = createSelector(
+  selectProducts,
+  ({ products }) => {
+    const locations = [];
+    products.forEach(({ location }) => locations.push(location));
+    return [...new Set(locations)];
+  }
+);
 
 export const fetchProducts = () => (dispatch) => {
   const { products } = require("../mock/products");
@@ -88,20 +67,4 @@ export const searchByLocation = (location) => (dispatch, getState) => {
     return product.location.search(location) !== -1;
   });
   dispatch(setFilteredProducts(result));
-};
-
-export const addToCart = (item) => (dispatch) => {
-  dispatch(setAddToCart(item));
-};
-
-export const removeFromCart = (item) => (dispatch) => {
-  dispatch(setRemoveItemFromCart(item));
-};
-
-export const increaseQty = (item) => (dispatch) => {
-  dispatch(setIncreaseItemt(item));
-};
-
-export const decreaseQty = (item) => (dispatch) => {
-  dispatch(setDecreaseItem(item));
 };

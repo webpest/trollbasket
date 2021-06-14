@@ -5,6 +5,7 @@ import { FiSearch, FiChevronLeft, FiShoppingCart } from "react-icons/fi";
 
 const Header = ({ title = "Header", hasRightAction = true, cartQty }) => {
   const history = useHistory();
+
   return (
     <header className={styles.header}>
       <div className="container">

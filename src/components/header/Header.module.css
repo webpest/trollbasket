@@ -2,9 +2,16 @@
 .header__home {
   background-color: var(--color-white);
 }
+.header {
+  position: fixed;
+  width: 100%;
+  max-width: 40rem;
+  color: var(--text-color-2);
+}
 
 .header__home {
   margin-bottom: 1.4rem;
+  color: var(--text-color-2);
 }
 
 .header__home h1 {
@@ -20,7 +27,25 @@
 }
 .subheader {
   display: flex;
-  justify-content: space-between;
+}
+
+.subheader > div {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  padding: 0 1rem;
+  width: 100%;
+  border-right: 0.5px solid #cbd6e0;
+}
+
+.subheader > div:first-child {
+  justify-content: flex-start;
+  padding: 0;
+}
+.subheader > div:last-child {
+  border-right: none;
+  padding: 0;
+  justify-content: center;
 }
 
 .header__actions {
@@ -60,6 +85,15 @@
 
 .cartBtn {
   position: relative;
+  background-color: #edf2f7;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  margin-right: 1.4rem;
 }
 
 .cartBtn > span {

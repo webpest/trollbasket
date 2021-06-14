@@ -1,3 +1,33 @@
 .cartitem__section {
+  margin-top: 6rem;
   padding: 1.6rem;
+}
+
+.total__box,
+.recently_viewed {
+  background-color: var(--color-white);
+  padding: 1.6rem 0;
+  margin-bottom: 0.8rem;
+}
+
+.total__list {
+  width: 100%;
+  list-style: none;
+  font-size: 1.4rem;
+  color: var(--text-color-2);
+}
+
+.total__list li,
+.recently__list li {
+  margin-bottom: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total__list li:last-child {
+  margin-bottom: 0;
+}
+
+.total__cost {
+  font-weight: 700;
 }

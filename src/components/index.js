@@ -6,3 +6,5 @@ export * from "./search-bar";
 export * from "./header";
 export * from "./error";
 export * from "./cart";
+export * from "./swiper";
+export * from "./select";

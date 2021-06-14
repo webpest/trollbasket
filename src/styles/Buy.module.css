@@ -1,3 +1,51 @@
 .home {
   background-color: var(--color-white);
 }
+
+.search {
+  margin-bottom: 2rem;
+}
+
+.slide {
+  color: var(--color-white);
+  height: 100%;
+  display: flex;
+  padding: 3rem 2.4rem;
+}
+
+.slide1 {
+  background-color: #227eff;
+}
+
+.slide2 {
+  background: #003277;
+  background-image: url("/src/assets/images/slide-bg.png");
+  background-position-x: left;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.slide2 > span {
+  max-width: 160px;
+}
+
+.slide2 > span > span {
+  color: #ee6f44;
+}
+
+.slide2 > button {
+  background-color: #227eff;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+  font-size: 10px;
+  font-weight: 400;
+  color: #fff;
+  padding: 0.8rem 1.9rem;
+}
+
+.slide3 {
+  background-color: #ee6f44;
+}

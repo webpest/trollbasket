@@ -1,0 +1,12 @@
+.swiper__wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-cell {
+  width: 80%;
+  height: 123px;
+  margin-right: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+}

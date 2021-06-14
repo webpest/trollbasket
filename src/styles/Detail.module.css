@@ -1,4 +1,5 @@
 .product__image {
+  margin-top: 6rem;
   padding: 1.6rem 0;
 }
 
@@ -6,4 +7,37 @@
   height: 206px;
   width: 312px;
   margin: 0 auto;
+}
+
+.product__desc,
+.accordian,
+.review {
+  background-color: #fff;
+  padding: 1.6rem 0;
+}
+
+.product__desc h1 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+  color: var(--text-color-2);
+}
+
+.price {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-top: 1.8rem;
+  color: var(--text-color-2);
+}
+.accordian,
+.review {
+  margin-top: 4px;
+}
+
+.accordian ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  color: var(--text-color-2);
 }

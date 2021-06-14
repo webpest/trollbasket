@@ -2,7 +2,7 @@ import React from "react";
 import { ProductItem } from "components";
 import styles from "./Product.module.css";
 
-const ProductGrid = ({ products }) => {
+const ProductGrid = ({ products, productCount }) => {
   return (
     <div className={styles.product__grid}>
       {products.map((product) => (

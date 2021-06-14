@@ -1,9 +1,11 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { FiShoppingCart } from "react-icons/fi";
+import { ReactComponent as CartIcon } from "assets/icons/cart-icon.svg";
+import { ReactComponent as OrderIcon } from "assets/icons/orders-icon.svg";
+import { Select } from "components";
 import styles from "./Header.module.css";
 
-const HomeHeader = ({ cartQty }) => {
+const HomeHeader = ({ cartQty, locations, handleFilter }) => {
   const history = useHistory();
   return (
     <header className={styles.header__home}>
@@ -13,8 +15,13 @@ const HomeHeader = ({ cartQty }) => {
       <div className={styles.subheader__wrapper}>
         <div className="container">
           <div className={styles.subheader}>
-            <div>1</div>
             <div>
+              <Select options={locations} handleFilter={handleFilter} />
+            </div>
+            <div>
+              <button className={styles.cartBtn}>
+                <OrderIcon />
+              </button>
               <span>My Orders</span>
             </div>
             <div>
@@ -23,7 +30,7 @@ const HomeHeader = ({ cartQty }) => {
                 className={styles.cartBtn}
               >
                 <span>{cartQty}</span>
-                <FiShoppingCart />
+                <CartIcon />
               </button>
               <span>Cart</span>
             </div>

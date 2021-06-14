@@ -2,7 +2,7 @@
   display: flex;
   border: 1px solid transparent;
   border-radius: var(--border-radius);
-  background-color: var(--bg-color);
+  background-color: #edf2f7;
   height: 4rem;
   overflow: hidden;
   align-items: center;
