@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 import {
   fetchProduct,
   fetchProducts,
@@ -53,7 +55,26 @@ const Detail = () => {
         </div>
       </section>
       <section className={styles.review}>
-        <div className="container">3434</div>
+        <div className="container">
+          <ul className={styles.review__list}>
+            <li>
+              <h3>Reviews and Ratings</h3> <Link>View All</Link>
+            </li>
+            <li>
+              <ReactStars
+                count={5}
+                size={12}
+                activeColor="#FFCA42"
+                color="#EEEFF2"
+              />
+            </li>
+            <li>
+              This is the best product I have used in a long while and the size
+              fits perfectly and I love the colors!!!!!
+            </li>
+            <li>Segun Arinze</li>
+          </ul>
+        </div>
       </section>
 
       <DetailBottomNav addToCart={handleAddToCart} />

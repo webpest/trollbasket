@@ -41,3 +41,26 @@
   font-size: 1.4rem;
   color: var(--text-color-2);
 }
+
+.review__list {
+}
+
+.review__list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+}
+
+.review__list li:first-child {
+  padding-top: 0;
+}
+
+.review__list li:last-child {
+  padding-bottom: 0;
+}
+
+.review__list li h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--text-color-2);
+}
