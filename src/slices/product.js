@@ -55,9 +55,10 @@ export const fetchProduct = (id) => (dispatch, getState) => {
 
 export const searchByName = (query) => (dispatch, getState) => {
   const { products } = getState().product;
-  const result = products.filter((product) => {
-    return product.name.search(query) !== -1;
+  const result = products.filter(({ name }) => {
+    return String(name).toLowerCase().includes(String(query).toLowerCase());
   });
+
   dispatch(setFilteredProducts(result));
 };
 
