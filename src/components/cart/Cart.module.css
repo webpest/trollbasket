@@ -70,7 +70,7 @@
 
 .desc a {
   text-decoration: none;
-  color: #212c3d;
+  color: #212c3d !important;
 }
 
 .desc > p {
